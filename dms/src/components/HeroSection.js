@@ -17,9 +17,6 @@ export default function Hero() {
               <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
                 Get Started
               </Button>
-              <Button variant="outline" className="text-indigo-600 border-indigo-600 hover:bg-indigo-100">
-                Learn More
-              </Button>
             </div>
           </div>
           <div className="relative h-[300px] md:h-[400px]">

@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Activity, Calendar, ChevronDown, ClipboardList, CreditCard, FileText, Home, LogIn, Menu, Package, Settings, UserPlus, Users } from 'lucide-react'
+import { Activity, Calendar, ChevronDown, ClipboardList, CreditCard, FileText, Home, LogIn, Menu, Package, Settings, User, UserPlus, Users } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
@@ -16,7 +16,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 const mainNavItems = [
     { title: "Home", href: "./", icon: Home },
     { title: "Patients", href: "/patients", icon: Users },
-    { title: "Appointments", href: "/appointments", icon: Calendar },
+    { title: "Appointments", href: "/Appionments", icon: Calendar },
     
 ]
 
@@ -24,6 +24,7 @@ const moreNavItems = [
     { title: "Billing", href: "/billing", icon: CreditCard },
     { title: "Staff", href: "/staff", icon: Users },
     { title: "Settings", href: "/settings", icon: Settings },
+    { title: "Profile", href: "/profile" , icon: User} 
 ]
 
 export default function Navigationbar() {
@@ -40,7 +41,7 @@ export default function Navigationbar() {
                         <div className="flex">
                             <Link href="/" className="flex-shrink-0 flex items-center">
                                 <ClipboardList className="h-8 w-8 text-indigo-600" />
-                                <span className="ml-2 text-xl font-bold text-indigo-800">DocManager</span>
+                                <span className="ml-2 text-xl font-bold text-indigo-800">Happy Health</span>
                             </Link>
                         </div>
                         <div className="hidden md:flex md:items-center md:space-x-4">
