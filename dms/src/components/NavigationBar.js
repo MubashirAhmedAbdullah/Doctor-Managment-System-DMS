@@ -17,14 +17,14 @@ const mainNavItems = [
     { title: "Home", href: "./", icon: Home },
     { title: "Patients", href: "/patients", icon: Users },
     { title: "Appointments", href: "/Appionments", icon: Calendar },
-    
+
 ]
 
 const moreNavItems = [
     { title: "Billing", href: "/billing", icon: CreditCard },
     { title: "Staff", href: "/staff", icon: Users },
     { title: "Settings", href: "/settings", icon: Settings },
-    { title: "Profile", href: "/profile" , icon: User} 
+    { title: "Profile", href: "/profile", icon: User }
 ]
 
 export default function Navigationbar() {
@@ -81,10 +81,12 @@ export default function Navigationbar() {
                             </DropdownMenu>
                         </div>
                         <div className="hidden md:flex md:items-center md:space-x-4">
-                            <Button variant="ghost" className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100">
-                                <LogIn className="h-4 w-4 mr-2" />
-                                Login
-                            </Button>
+                            <Link href={"/Login"}>
+                                <Button variant="ghost" className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100">
+                                    <LogIn className="h-4 w-4 mr-2" />
+                                    Login
+                                </Button>
+                            </Link>
                             <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
                                 <UserPlus className="h-4 w-4 mr-2" />
                                 Create Account
@@ -105,8 +107,8 @@ export default function Navigationbar() {
                                                 key={item.href}
                                                 href={item.href}
                                                 className={`flex items-center px-4 py-2 text-sm font-medium rounded-md ${pathname === item.href
-                                                        ? 'bg-indigo-100 text-indigo-800'
-                                                        : 'text-slate-600 hover:bg-indigo-50 hover:text-indigo-800'
+                                                    ? 'bg-indigo-100 text-indigo-800'
+                                                    : 'text-slate-600 hover:bg-indigo-50 hover:text-indigo-800'
                                                     }`}
                                             >
                                                 <item.icon className="h-5 w-5 mr-3" />
@@ -124,8 +126,7 @@ export default function Navigationbar() {
                                             </Link>
                                         ))}
                                         <hr className="border-indigo-200" />
-                                        <Link
-                                            href="/login"
+                                        <Link href={"/Login"}
                                             className="flex items-center px-4 py-2 text-sm font-medium text-slate-600 hover:bg-indigo-50 hover:text-indigo-800 rounded-md"
                                         >
                                             <LogIn className="h-5 w-5 mr-3" />
