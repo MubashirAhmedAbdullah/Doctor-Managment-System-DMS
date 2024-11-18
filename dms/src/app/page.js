@@ -1,3 +1,4 @@
+import DoctorArticle from "@/components/DoctorArticlesPage";
 import DoctorTeam from "@/components/DoctorsCard";
 import FeatureCards from "@/components/FacalityCard";
 import Hero from "@/components/HeroSection";
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <FeatureCards />
         <DoctorTeam />
+        <DoctorArticle />
 
       </div>
     </div>
