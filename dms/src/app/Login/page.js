@@ -22,8 +22,8 @@ export default function Login() {
     }
 
     return (
-        <div className="min-h-screen">
-            <div className="flex items-center justify-center  bg - indigo-50 p-4">
+        <div className="max-h-screen pt-16">
+            <div className="flex items-center justify-center  bg-indigo-50 p-4">
                 <Card className="w-full max-w-md shadow-xl">
                     <CardHeader className="space-y-1">
                         <CardTitle className="text-3xl font-bold text-center text-indigo-900">Welcome Back</CardTitle>

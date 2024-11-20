@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-indigo-50`}
       >
-        <Navigationbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
