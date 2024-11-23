@@ -72,7 +72,7 @@ export default function DoctorTeam() {
                   asChild
                   className="w-full bg-indigo-600 text-white hover:bg-indigo-700"
                 >
-                  <Link href={`/doctors/${doctor.id}`}>See Full Profile</Link>
+                  <Link href={`/Doctors/${doctor.id}`}>See Full Profile</Link>
                 </Button>
               </div>
             </div>

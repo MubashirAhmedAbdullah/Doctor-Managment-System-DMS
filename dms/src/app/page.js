@@ -4,7 +4,7 @@ import FeatureCards from "@/components/FacalityCard";
 import Footer from "@/components/Footer";
 import Hero from "@/components/HeroSection";
 import Navigationbar from "@/components/NavigationBar";
-import Image from "next/image";
+
 
 export default function Home() {
   return (

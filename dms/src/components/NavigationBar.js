@@ -1,6 +1,4 @@
 "use client"
-
-import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Activity, Calendar, ChevronDown, ClipboardList, CreditCard, FileText, Home, LogIn, Menu, Package, Settings, User, UserPlus, Users } from 'lucide-react'
@@ -12,11 +10,12 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from 'next/image'
 
 const mainNavItems = [
     { title: "Home", href: "./", icon: Home },
-    { title: "Patients", href: "/patients", icon: Users },
-    { title: "Appointments", href: "/Appionments", icon: Calendar },
+    // { title: "Doctors", href: "/patients", icon: Users },
+    { title: "Doctors", href: "/Appionments", icon: Calendar },
 
 ]
 
@@ -40,7 +39,12 @@ export default function Navigationbar() {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <Link href="/" className="flex-shrink-0 flex items-center">
-                                <ClipboardList className="h-8 w-8 text-indigo-600" />
+                                <div>
+                                    <Image src={"/favicon.jpg"}
+                                    width={80}
+                                    height={80}
+                                    alt='Happy Health' />
+                                </div>
                                 <span className="ml-2 text-xl font-bold text-indigo-800">Happy Health</span>
                             </Link>
                         </div>
@@ -87,10 +91,12 @@ export default function Navigationbar() {
                                     Login
                                 </Button>
                             </Link>
-                            <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
-                                <UserPlus className="h-4 w-4 mr-2" />
-                                Create Account
-                            </Button>
+                            <Link href={"/Signup"}>
+                                <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
+                                    <UserPlus className="h-4 w-4 mr-2" />
+                                    Create Account
+                                </Button>
+                            </Link>
                         </div>
                         <div className="flex items-center md:hidden">
                             <Sheet>
@@ -133,7 +139,7 @@ export default function Navigationbar() {
                                             Login
                                         </Link>
                                         <Link
-                                            href="/create-account"
+                                            href={"/Signup"}
                                             className="flex items-center px-4 py-2 text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 rounded-md"
                                         >
                                             <UserPlus className="h-5 w-5 mr-3" />
