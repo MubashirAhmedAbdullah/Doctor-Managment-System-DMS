@@ -1,34 +1,45 @@
 "use client"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Activity, Calendar, ChevronDown, ClipboardList, CreditCard, FileText, Home, LogIn, Menu, Package, Settings, User, UserPlus, Users } from 'lucide-react'
+import {  Calendar, Home, LogIn, Menu, Settings, User, UserPlus, } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from 'next/image'
 
 const mainNavItems = [
-    { title: "Home", href: "./", icon: Home },
+    { title: "Home", href: "/", icon: Home },
     // { title: "Doctors", href: "/patients", icon: Users },
-    { title: "Doctors", href: "/Appionments", icon: Calendar },
+    { title: "Doctors", href: "/Doctors", icon: Calendar },
+    { title: "Profile", href: "/Profile", icon: User },
+    // { title: "Settings", href: "/settings", icon: Settings },
+
+    
 
 ]
 
-const moreNavItems = [
-    { title: "Billing", href: "/billing", icon: CreditCard },
-    { title: "Staff", href: "/staff", icon: Users },
-    { title: "Settings", href: "/settings", icon: Settings },
-    { title: "Profile", href: "/profile", icon: User }
+const secondNainNavItems = [
+    { title: "Home", href: "/", icon: Home },
+    // { title: "Doctors", href: "/patients", icon: Users },
+    { title: "Doctors", href: "/Doctors", icon: Calendar },
+    // { title: "Profile", href: "/Profile", icon: User },
+    // { title: "Settings", href: "/settings", icon: Settings },
+
+    
+
 ]
+
+// const moreNavItems = [
+//     { title: "Billing", href: "/billing", icon: CreditCard },
+//     { title: "Staff", href: "/staff", icon: Users },
+//     { title: "Settings", href: "/settings", icon: Settings },
+//     { title: "Profile", href: "/profile", icon: User }
+// ]
 
 export default function Navigationbar() {
 
     const pathname = usePathname()
+    const session = true
+    
 
 
 
@@ -49,7 +60,9 @@ export default function Navigationbar() {
                             </Link>
                         </div>
                         <div className="hidden md:flex md:items-center md:space-x-4">
-                            {mainNavItems.map((item) => (
+
+                            { session ? (
+                               mainNavItems.map((item) => (
                                 <Button
                                     key={item.href}
                                     variant={pathname === item.href ? "secondary" : "ghost"}
@@ -61,8 +74,36 @@ export default function Navigationbar() {
                                         {item.title}
                                     </Link>
                                 </Button>
-                            ))}
-                            <DropdownMenu>
+                            )) 
+                            ) : (
+                                secondNainNavItems.map((item) => (
+                                    <Button
+                                        key={item.href}
+                                        variant={pathname === item.href ? "secondary" : "ghost"}
+                                        className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100"
+                                        asChild
+                                    >
+                                        <Link href={item.href}>
+                                            <item.icon className="h-4 w-4 mr-2" />
+                                            {item.title}
+                                        </Link>
+                                    </Button>
+                                ))
+                            )}
+                            {/* {mainNavItems.map((item) => (
+                                <Button
+                                    key={item.href}
+                                    variant={pathname === item.href ? "secondary" : "ghost"}
+                                    className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100"
+                                    asChild
+                                >
+                                    <Link href={item.href}>
+                                        <item.icon className="h-4 w-4 mr-2" />
+                                        {item.title}
+                                    </Link>
+                                </Button>
+                            ))} */}
+                            {/* <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100">
                                         <ChevronDown className="h-4 w-4 mr-2" />
@@ -82,7 +123,7 @@ export default function Navigationbar() {
                                         </DropdownMenuItem>
                                     ))}
                                 </DropdownMenuContent>
-                            </DropdownMenu>
+                            </DropdownMenu> */}
                         </div>
                         <div className="hidden md:flex md:items-center md:space-x-4">
                             <Link href={"/Login"}>
@@ -121,7 +162,7 @@ export default function Navigationbar() {
                                                 {item.title}
                                             </Link>
                                         ))}
-                                        {moreNavItems.map((item) => (
+                                        {/* {moreNavItems.map((item) => (
                                             <Link
                                                 key={item.href}
                                                 href={item.href}
@@ -130,7 +171,7 @@ export default function Navigationbar() {
                                                 <item.icon className="h-5 w-5 mr-3" />
                                                 {item.title}
                                             </Link>
-                                        ))}
+                                        ))} */}
                                         <hr className="border-indigo-200" />
                                         <Link href={"/Login"}
                                             className="flex items-center px-4 py-2 text-sm font-medium text-slate-600 hover:bg-indigo-50 hover:text-indigo-800 rounded-md"

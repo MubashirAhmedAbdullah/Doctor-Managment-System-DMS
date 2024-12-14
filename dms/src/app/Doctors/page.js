@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,10 @@ import { doctorsList } from '@/lib/data'
 
 
 export default function Appointment() {
+
+
+
+  const isLoggedIn = true
   return (
     <div className="container mx-auto">
       <section className="bg-indigo-50 py-12 md:py-20">
@@ -28,7 +33,7 @@ export default function Appointment() {
                     <Image
                       src={`/placeholder.svg?height=200&width=300&text=${doctor.photo}`}
                       alt={doctor.name}
-                      fill
+                      fill={true}
                       style={{ objectFit: 'cover' }}
                       className="rounded-t-lg"
                     />
@@ -62,13 +67,24 @@ export default function Appointment() {
                   <p className="text-slate-700 text-sm">{doctor.additionalDetails}</p>
                 </CardContent>
                 <CardFooter className="flex flex-col sm:flex-row gap-4">
-                  <Link href={`/BookAppionments/${doctor.id}`}>
-                    <Button className="w-full sm:w-auto bg-indigo-600 text-white hover:bg-indigo-700">
-                      Book Appointment
-                    </Button>
-                  </Link>
+                  {
+                    isLoggedIn ? (
+                      <Link href={`/BookAppionments/${doctor.id}`}>
+                        <Button className="w-full sm:w-auto bg-indigo-600 text-white hover:bg-indigo-700">
+                          Book Appointment
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Link href={"/Login"}>
+                        <Button className="w-full sm:w-auto bg-indigo-600 text-white hover:bg-indigo-700">
+                          Book Appointment
+                        </Button>
+                      </Link>
+                    )
+                  }
 
-                  <Link href={`/Doctors/${doctor.id}`}>
+
+                  <Link href={`/DoctorsDetails/${doctor.id}`}>
                     <Button variant="outline" className="w-full sm:w-auto text-indigo-600 border-indigo-600 hover:bg-indigo-100">
                       View More Details
                     </Button>

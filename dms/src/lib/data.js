@@ -1,3 +1,6 @@
+import { Calendar, Users, FileText, CreditCard, Activity, Package } from 'lucide-react'
+
+
 export const doctorsList = [
   {
     id: 1,
@@ -19,7 +22,7 @@ export const doctorsList = [
   {
     id: 2,
     name: "Dr. Ahmed Malik",
-    photo: "/images/dr_ahmed.jpg",
+    photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAyQMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAACAAEDBAUGBwj/xAA6EAACAQMDAgMGBQIEBwEAAAABAgADBBEFEiEGMRNBYQciUXGBkRQyUqGxQtEzssHhFiMkYoLw8RX/xAAZAQACAwEAAAAAAAAAAAAAAAAAAQIDBAX/xAAhEQEBAQACAwEAAgMAAAAAAAAAAQIDERIhMQQUIhNBUf/aAAwDAQACEQMRAD8A0VWSKIlEkUToObCAhYjgRxEZAQwI2IawM2MRwIe2MFiBARYhCOIGHEWIeIsRBGQB3mBfdUWdtXajb29xeMhw5oAFV+pPMwPaD1NVta76TSVkp7VNZxwWB8hMez0LUdYpUW0UEUWGOF27T8x3mbm5/G9ZbOH8/n7rt7bqi0rY8WhWognucHHzwZtU3SqgqUyCp7ETg6fs76lRXD1KI34bdvPBHaVrS81jpvUkt7uoKlFGw9Mk5YH4SPH+nu9aPk/L1O8vRiIJEkGHUMM4IzzGImxhQkQWXiTYgsIwrOshZZbYSJlgipumZA6S868Su6xkp1Fke2WXWR7IybaiSLBAhiRTFHAiEcCAOIYEEQhEYo+IwEKFM2I4EeKIEIsRxHiN591BplGv7QbV7pFag9ujAN2ZlJH9p6ppKKtBEXaoA4A4xPOOtEvautWFLTlIrrQcrUGM8sMgfb94/Ttn1bZ6pa1728rG1q1lWtSuGJwCQOD/AGnN/RJd/XX/ACd/4/j1Wu6+HgsoPznmvtMREpW9Y0+QxUtj6iaGt9GXmp6sbuhfOKQbAXeQVGe0bVOmGpaGtlcXD1i1SnkEk87hwueexlM9WVo1m2WNJcFFPfgfxGIki0WoItI1FqBR7rBdvHlwYxE7GL5ZlcHkzc6uajIxBIkpgkSaCAiAwkxgNAld1ld1lthIXWOFVNxA2yw6wNsZNMQgYOIQESQweIYgqIQiBDvDEADmGIjGIhGBjwplHzBzGzEEmYsyPdH3QHbI6gepZ3FnqVMAiixR/QN2P3Ey9Z6xr/iaK2iLWqo4ZrZ22HAOQR9v3nQ6parqGnXFoTt8VCA36T5H6Gc50w1bULb8PqCKup6VU8OoQcMV8iD3xMH6cSa8nU/Fy258G0nUt81Fri5t6lBn/wAGlRRnbce2SBz5Q7vVbusLDxU8Os9xSzSYdiCCczYo3KUNPq3ldkXw0bazNzx85yHS1O81/VTqDqxoox2fBnPf+0z4z5ajXy7uc3p1dV2quaj8sxzxAMI8Eg8EcGCZ1569Rwbbb3QkQSIcFo0UbQMQyIxEZImEhcSw0hcRlVZxAxJmWDtEZLghCCBDERjEcRhCiM+Io2Y4MRnBi3RiYBMAPdGJkZMEtAJC3rG3SFmk1tbV7kgUabtk43Y4H1ivo53fggdwOATgE8ek8t13/wDVpa7VvaAejXuDlMe6GH6T6jE900nSktbrLtvbYQT5fScH7Q7yjpNjc0qFgl3VJ3N4oIWiu7hjjnPpn1lW5OSWNPFLx3tzeg6RrnUddbS7r1Vtyc1fhie1aNpFvpVlTtbRAAoHPxnE+znqm0qaZSo6jaCxqsWFKtg+Hc7eDtJ/q4xt88cT0uz3tbrUqUzTdhkr5r6fOU5xMTto1yXd6Yet6TUar+ItaRO7moi/H4zCYEMVYEEdwRgiegFQF9TKt1Y292MV6Ssf1ef3lmeTr1WfXFL8cOe0Gbt909Vp+/aMai/ob83+8xHUoxVlKsO4I7S+al+M+s3P1EYBkjQDJIAIkbLJjI3jJXeBiG8CBLUcRhCx8IGkUx4AMKIzxsx8xjAFmAxiMFiIGEtALesTGKhSavcJSQZLHtny84h/vps6HpC3dP8AFVmyoztpjz+c66lRWnVNNVAVVBUY4Hcf6SnQRKAoeGTsBCYPfHbn7j7S+Dm7dfPwwRM2tWtuMTM6V6dI0SKjOXLEZPkPhicf7YGoWnR9+5Rd1coi8d2Zh/pmdtjNNvh5enpPOPbfb3WoaboFjZKXq3WoCiqjzbBxn+ZGXpKr/seQXHSNulZVZbW4qqCQDg7yw/zT0J1VgA2cA+RxMvpzSaHT2i2um23veEvvHzqN/U31M0T+dSTz6eUXdpnWmBUDbnJx2LZEMdvnGJxkwQfex5Y/eASTneqbXhLpByPcf5eU6Ec9pn63T8eyegvLsN3HljmSxetIbncriCYJkhxAM1sITI3kpkTxlULwIbwY4SYQgYIj/KIDhQAYiYjH9YswMwcwMTfOQv8AOGTIXMAEtNHp2mlXUlaocLTG7d+k+RmS7fGdZ01Sp2VgLy7IpBySS/G5CduD9cH6yHJesreHN1qdOiuKTVLV1THiAZVvInyjCt/1tJ/J6OT941nqFlUUJTrhlz7ufhIroqldWH5UXb38s4mWal+NtzZ9aAXDnH5H5lK4oUal1btVoipVt3L0WI/wyV2k+nBI+sntm3r+bOIZU/hy4/NjJ9YElQADOcse7fGIqSJElUMF9RmVbzU0t6ho0qNxdVwNxpWyhmUeuSAPqYwzeserrPpnT6VWrSq3N3c1PBtbSljfVqZxj0HrMbp/rurdalTseoLFNNuLkgW4SoagY9trHAwczD1K7fVfapZXdpbiutnbeHTpXHuLRqnO5iO+cHyznA+coe0bU7qvcaRpVJLZru4vUdTb0iHGD7rZyeOf5+p0Hs1N8oCB3kVddqM39bKVX5mSrlRk/wD2M2FJqVDwgLH0iKvPB2iiGcCMZtc8LSNobQDGVRsIENzI8yUJLDEAEQpEHzzHzGEWYDsjAY4jmCTEYS3EgqNJHIxK1RowsaZSFxqVClUUshOSB54GZ1Wv2l17lam9YWqp2pqHFNs5yV/tMro5UFSrVFPfW3BFPko7md0jA0yrKADwcHvMn6J5zpu/Lqcf9nF2ysdjtgED3bqgMf8Ai6/3/YzRrtUajupkEr+48x/75zYfSrZzmkDTJ4O05z941PSlRcGtx5YWYc8XJi+nS1zce57Zmk6miuFqsdrcZ+E6G2qK9PvkYmOOn1FVs1AVJyBjtNG3snt0CrV/KO5mqX17ZNzPfpT1a0uLjTLuztLp7WuylEr0/wA1MH+oesk02hQ0jT6Vq1UkKvvVahy1RvNmPmTIn1bxKjeDSBxld5Pf6Sjc3FStjxznb2AHAleubM+LM8GrfbOqaPQqandalb3FWjcVGyMKMD3SvPx7/sJm9FdHXVn1BW1fXKtO7uqQC2rAkqq4xu5HfHGPn6TfpIHLrsYnIPJxNCyzTuBt3jcMAHkSvj5dXXVWcnFmZ9N1RgAnymX1FXZNPqBTtDDB9Zp7srOe6prYtVTP5mmvE70xbvWa5rMExsxTY5/ZjAaGZGxgXaJzAhPAkoSVTDEjBhgxUHzGJjwSYjMzQC0djIXOIA1RpTrP3k1RpUqtAOg6MvFp3VWmzYbG5QfM9j+38zskrMVGSfme08lo3b2t0ldCcqfI4zNs9VVbvFMgU6fYqX95/meBKdZ7rVx7ky9CS8De6jZPxktK5ZlyWCsOD6zgj1BdUlHh2lRVHZgpI+/aVn6nuifeqqo884Ej4Lf8kelC7RWAdxkyn1Fq9Ow0a5q0nWrV2YWmh5OTjP0yftPO36lqqu43IVB3xgiQW2pV767pU6A8GizYqVnxnH/b5fWK8c/6ed9Vc/45FJQgstrKc4VtxA+UdvaFpuHqXCsoHP0nUJRs7FvDuLUG3dQVrUk5X49u8o9T6PZ3+h3htadtcM1I+DXpqNyN5bh8PlKP4+Yv/k6ef677RLxXWtotlXVKlMslaup2MAcFh8RmdZ7Ntf1TVtTvBqF/a1haohpimmxKu7uQc9x2nH6lrtpQGiC7tFKWe+nXs2o8+8v6eARkDkHB4Pzz+nK1xo9dbuvRtadpcq6mzZjvpANlcZGCecjzjnFJfSOubV+19HLhuSOTOT6qrZr06YPbJ4mlo+tpqel07u3U+DU/KrcMAPMkmcvqtz+JvHbjAPGJfx59s/Nr+qEGHniQqYeZpYiYyJmhkyMwhI3MCE0GMJAYYMhBkgPEAMmCTFmCYgFzIKjSRjIKjQCGo8p1nk9VhKVZogrVmlKs/MnrtKFZoqlFe7vb23CmyrVaZzyUciX9HrdQ6lSfF3cMKecsxkmk6b+ODOQSF4nf9B6WlKxveM/83jI9BKr9asT053R+krjUUtrq+uatVKmd6uxwCM/7TfPQFHbutbivbv3Hhtxn5Tpen6QW2VF8i3H1myQAhGMY4kLeqtkeYVdO6w01StteU7iivYOuP4MyavUOqW1TbeWDpV/qegCPvPYGKge8MrM2/wBPS8QqtNFB4yRHNI3Dy5+oLeqhW4ZsfBu4/aUfxukc4a4K+aYyp+87TVejVrIdtMH5TnKvRFaiDw485PyiPjW3o/UL1LA29su1FG0EqFx9pIhOOe8g0rSnstNrGoPeGGhqZZhn5fVi0DCzIA0INJKkjGATGLQS0ZBcwMmOxgZjCRe0NTFFAETBJMUUQROTK1QmPFEFOqTKNYmPFA1GsZQrH+YopFOOu6JANsfVWJ+5ne9KgJp16wHIqn/KIopVpq4/ifRiHqFGUFck4+s2a2AowMekUUrv1bDIBjt5RkUeGR6xoojBUUBwB2le8pLszjPziijhVlXVFBpd2QOdjfxOSQmKKaOL5WPn+xMDHyYopYoMSYieI0UYAxg5MUUCf//Z",
     specialties: ["Dermatologist", "Cosmetologist"],
     appointmentDays: ["Tuesday", "Thursday", "Saturday"],
     clinicTiming: "10:00 AM - 4:00 PM",
@@ -53,7 +56,7 @@ export const doctorsList = [
   {
     id: 4,
     name: "Dr. Ali Hussain",
-    photo: "/images/dr_ali.jpg",
+    photo: "data:image/jpeg;base64,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",
     specialties: ["Orthopedic Surgeon", "Sports Medicine"],
     appointmentDays: ["Tuesday", "Friday", "Sunday"],
     clinicTiming: "11:00 AM - 6:00 PM",
@@ -87,7 +90,7 @@ export const doctorsList = [
   {
     id: 6,
     name: "Dr. Yusuf Ahmed",
-    photo: "/images/dr_yusuf.jpg",
+    photo: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
     specialties: ["General Practitioner", "Family Medicine"],
     appointmentDays: ["Tuesday", "Thursday", "Saturday"],
     clinicTiming: "8:00 AM - 1:00 PM",
@@ -121,7 +124,7 @@ export const doctorsList = [
   {
     id: 8,
     name: "Dr. Bilal Sheikh",
-    photo: "/images/dr_bilal.jpg",
+    photo: "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
     specialties: ["Endocrinologist", "Diabetologist"],
     appointmentDays: ["Monday", "Thursday", "Friday"],
     clinicTiming: "9:00 AM - 4:00 PM",
@@ -155,7 +158,7 @@ export const doctorsList = [
   {
     id: 10,
     name: "Dr. Ibrahim Saeed",
-    photo: "/images/dr_ibrahim.jpg",
+    photo: "https://plus.unsplash.com/premium_photo-1681996359725-06262b082c27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
     specialties: ["Psychiatrist", "Psychotherapist"],
     appointmentDays: ["Monday", "Wednesday", "Friday"],
     clinicTiming: "11:00 AM - 5:00 PM",
@@ -189,7 +192,7 @@ export const doctorsList = [
   {
     id: 12,
     name: "Dr. Omar Nawaz",
-    photo: "/images/dr_omar.jpg",
+    photo: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
     specialties: ["Radiologist", "Oncologist"],
     appointmentDays: ["Tuesday", "Thursday", "Saturday"],
     clinicTiming: "9:00 AM - 2:00 PM",
@@ -204,3 +207,75 @@ export const doctorsList = [
     consultationFee: "$230"
   }
 ];
+
+
+
+export const features = [
+  {
+    title: "Appointment Management",
+    description: "Efficiently schedule and manage patient appointments with our intuitive calendar system.",
+    icon: Calendar,
+  },
+  {
+    title: "Patient Records",
+    description: "Securely store and access comprehensive patient records, including medical history and treatment plans.",
+    icon: Users,
+  },
+  {
+    title: "Medical Charting",
+    description: "Create and maintain detailed medical charts with our user-friendly interface.",
+    icon: FileText,
+  },
+  {
+    title: "Billing & Invoicing",
+    description: "Streamline your billing process with integrated invoicing and payment tracking.",
+    icon: CreditCard,
+  },
+  {
+    title: "Analytics & Reporting",
+    description: "Gain valuable insights into your practice with comprehensive analytics and customizable reports.",
+    icon: Activity,
+  },
+  {
+    title: "Inventory Management",
+    description: "Keep track of medical supplies and equipment with our built-in inventory management system.",
+    icon: Package,
+  },
+]
+
+
+export const doctors = [
+  {
+    id: 1,
+    name: "Dr. Jane Smith",
+    specialty: "Cardiologist",
+    categories: ["Heart Disease", "Hypertension", "Arrhythmia"],
+    description: "Dr. Smith is a board-certified cardiologist with over 15 years of experience in treating complex heart conditions. She specializes in interventional cardiology and has pioneered several minimally invasive procedures.",
+    imageUrl: "https://images.unsplash.com/photo-1605684954998-685c79d6a018?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9jdG9yJTIwaW1hZ2VzfGVufDB8fDB8fHww",
+  },
+  {
+    id: 2,
+    name: "Dr. John Doe",
+    specialty: "Pediatrician",
+    categories: ["Child Development", "Pediatric Immunology", "Behavioral Disorders"],
+    description: "Dr. Doe is a compassionate pediatrician dedicated to providing comprehensive care for children from infancy through adolescence. He has a special interest in childhood obesity prevention and adolescent mental health.",
+    imageUrl: "https://images.unsplash.com/photo-1584467735815-f778f274e296?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    id: 3,
+    name: "Dr. Emily Brown",
+    specialty: "Neurologist",
+    categories: ["Stroke", "Epilepsy", "Multiple Sclerosis"],
+    description: "Dr. Brown is a highly skilled neurologist known for her expertise in diagnosing and treating complex neurological disorders. She leads our hospital's stroke unit and is actively involved in clinical research on neurodegenerative diseases.",
+    imageUrl: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
+  },
+  {
+    id: 4,
+    name: "Dr. Michael Lee",
+    specialty: "Orthopedic Surgeon",
+    categories: ["Joint Replacement", "Sports Injuries", "Spinal Disorders"],
+    description: "Dr. Lee is a renowned orthopedic surgeon specializing in minimally invasive techniques for joint replacements and sports-related injuries. He has treated numerous professional athletes and is a pioneer in robotic-assisted orthopedic surgeries.",
+    imageUrl: "https://images.unsplash.com/photo-1612276529731-4b21494e6d71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
+  },
+]
+

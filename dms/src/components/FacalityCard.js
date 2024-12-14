@@ -1,38 +1,7 @@
+import { features } from '@/lib/data'
 import Image from 'next/image'
-import { Calendar, Users, FileText, CreditCard, Activity, Package } from 'lucide-react'
 
-const features = [
-  {
-    title: "Appointment Management",
-    description: "Efficiently schedule and manage patient appointments with our intuitive calendar system.",
-    icon: Calendar,
-  },
-  {
-    title: "Patient Records",
-    description: "Securely store and access comprehensive patient records, including medical history and treatment plans.",
-    icon: Users,
-  },
-  {
-    title: "Medical Charting",
-    description: "Create and maintain detailed medical charts with our user-friendly interface.",
-    icon: FileText,
-  },
-  {
-    title: "Billing & Invoicing",
-    description: "Streamline your billing process with integrated invoicing and payment tracking.",
-    icon: CreditCard,
-  },
-  {
-    title: "Analytics & Reporting",
-    description: "Gain valuable insights into your practice with comprehensive analytics and customizable reports.",
-    icon: Activity,
-  },
-  {
-    title: "Inventory Management",
-    description: "Keep track of medical supplies and equipment with our built-in inventory management system.",
-    icon: Package,
-  },
-]
+
 
 export default function FeatureCards() {
   return (

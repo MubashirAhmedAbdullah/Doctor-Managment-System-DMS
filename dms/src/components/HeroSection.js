@@ -14,10 +14,16 @@ export default function Hero() {
             <p className="text-lg text-slate-600 mb-6">
               Efficiently manage patients, appointments, and records with our comprehensive doctor management system.
             </p>
-            <div className="space-x-4">
+            <div className="space-x-10">
               <Link href={"/Appionments"}>
                 <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
                   Get Started
+                </Button>
+              </Link>
+
+              <Link href={"/ApplyForDoctor"}>
+                <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
+                  Apply As A Doctor
                 </Button>
               </Link>
             </div>

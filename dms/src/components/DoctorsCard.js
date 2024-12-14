@@ -1,41 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
+import { doctors } from '@/lib/data'
 
-const doctors = [
-  {
-    id: 1,
-    name: "Dr. Jane Smith",
-    specialty: "Cardiologist",
-    categories: ["Heart Disease", "Hypertension", "Arrhythmia"],
-    description: "Dr. Smith is a board-certified cardiologist with over 15 years of experience in treating complex heart conditions. She specializes in interventional cardiology and has pioneered several minimally invasive procedures.",
-    imageUrl: "https://images.unsplash.com/photo-1605684954998-685c79d6a018?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9jdG9yJTIwaW1hZ2VzfGVufDB8fDB8fHww",
-  },
-  {
-    id: 2,
-    name: "Dr. John Doe",
-    specialty: "Pediatrician",
-    categories: ["Child Development", "Pediatric Immunology", "Behavioral Disorders"],
-    description: "Dr. Doe is a compassionate pediatrician dedicated to providing comprehensive care for children from infancy through adolescence. He has a special interest in childhood obesity prevention and adolescent mental health.",
-    imageUrl: "https://images.unsplash.com/photo-1584467735815-f778f274e296?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
-  },
-  {
-    id: 3,
-    name: "Dr. Emily Brown",
-    specialty: "Neurologist",
-    categories: ["Stroke", "Epilepsy", "Multiple Sclerosis"],
-    description: "Dr. Brown is a highly skilled neurologist known for her expertise in diagnosing and treating complex neurological disorders. She leads our hospital's stroke unit and is actively involved in clinical research on neurodegenerative diseases.",
-    imageUrl: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
-  },
-  {
-    id: 4,
-    name: "Dr. Michael Lee",
-    specialty: "Orthopedic Surgeon",
-    categories: ["Joint Replacement", "Sports Injuries", "Spinal Disorders"],
-    description: "Dr. Lee is a renowned orthopedic surgeon specializing in minimally invasive techniques for joint replacements and sports-related injuries. He has treated numerous professional athletes and is a pioneer in robotic-assisted orthopedic surgeries.",
-    imageUrl: "https://images.unsplash.com/photo-1612276529731-4b21494e6d71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGRvY3RvciUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
-  },
-]
+
 
 export default function DoctorTeam() {
   return (
@@ -72,7 +40,7 @@ export default function DoctorTeam() {
                   asChild
                   className="w-full bg-indigo-600 text-white hover:bg-indigo-700"
                 >
-                  <Link href={`/Doctors/${doctor.id}`}>See Full Profile</Link>
+                  <Link href={`/DoctorsDetails/${doctor.id}`}>See Full Profile</Link>
                 </Button>
               </div>
             </div>
@@ -84,7 +52,7 @@ export default function DoctorTeam() {
             variant="outline"
             className="text-indigo-600 border-indigo-600 hover:bg-indigo-100"
           >
-            <Link href="/doctors">View All Doctors</Link>
+            <Link href="/Doctors">View All Doctors</Link>
           </Button>
         </div>
       </div>

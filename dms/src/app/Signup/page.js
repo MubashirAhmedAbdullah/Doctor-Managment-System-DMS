@@ -6,6 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Mail, Phone, Lock, ArrowRight } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 import Link from "next/link";
 
 export default function CreateAccount() {
@@ -14,6 +22,7 @@ export default function CreateAccount() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [doctor, setDoctor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +32,11 @@ export default function CreateAccount() {
       phoneNumber,
       password,
       confirmPassword,
+      doctor,
     });
+
+    console.log(e);
+
   };
 
   return (
@@ -134,6 +147,29 @@ export default function CreateAccount() {
               </div>
             </div>
 
+
+
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword" className="text-indigo-900">
+                Apply For Doctor
+              </Label>
+              <div className="relative">
+                <Select>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Apply For Doctor" />
+                  </SelectTrigger>
+                  <SelectContent
+                    value={doctor}
+                    id="doctor"
+                    onChange={(e) => setDoctor(e.target.value)}>
+                    <SelectItem value="Yes">Yes</SelectItem>
+                    <SelectItem value="No">No</SelectItem>
+                  </SelectContent>
+                </Select>
+
+              </div>
+            </div>
+
             {/* Submit Button */}
             <div className="col-span-full flex justify-center">
               <Button type="submit" className="w-full max-w-sm bg-indigo-600 text-white hover:bg-indigo-700">
@@ -146,9 +182,13 @@ export default function CreateAccount() {
         <CardFooter className="text-center text-sm text-slate-600">
           Already have an account?{" "}
           <Link className="font-semibold text-indigo-600 hover:underline" href={"/Login"}>Log in here</Link>
-          
+
         </CardFooter>
       </Card>
     </div>
   );
 }
+
+
+
+

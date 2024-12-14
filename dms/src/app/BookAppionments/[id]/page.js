@@ -14,8 +14,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { CalendarIcon, Clock, DollarSign } from 'lucide-react';
+import { doctorsList } from '@/lib/data';
+import { useToast } from '@/hooks/use-toast';
 
-const doctor = {
+const doctorInfo = {
     id: 1,
     name: "Dr. Aisha Abdullah",
     photo: "/images/dr_aisha.jpg",
@@ -26,7 +28,7 @@ const doctor = {
     consultationFee: "$200"
 };
 
-export default function BookAppointmentForm() {
+export default function BookAppointmentForm({ params }) {
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -42,29 +44,36 @@ export default function BookAppointmentForm() {
 
     };
 
+    const doctorInfo = doctorsList.find((doctors) => doctors.id == params.id)
+    console.log("doctors===>", doctorInfo);
+
+
+    const {toast} = useToast()
+    
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 md:p-8">
             <Card className="max-w-4xl mx-auto">
                 <CardHeader className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                     <div className="relative w-32 h-32 md:w-40 md:h-40">
                         <Image
-                            src={doctor.photo}
-                            alt={doctor.name}
+                            src={doctorInfo.photo}
+                            alt={doctorInfo.name}
                             fill
                             className="rounded-full object-cover"
                         />
                     </div>
                     <div className="text-center md:text-left">
-                        <CardTitle className="text-2xl font-bold text-indigo-900">{doctor.name}</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-indigo-900">{doctorInfo.name}</CardTitle>
                         <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2">
-                            {doctor.specialties.map((specialty, index) => (
+                            {doctorInfo.specialties.map((specialty, index) => (
                                 <Badge key={index} variant="secondary" className="bg-indigo-100 text-indigo-800">
                                     {specialty}
                                 </Badge>
                             ))}
                         </div>
                         <CardDescription className="mt-2 text-indigo-600">
-                            Book an appointment with {doctor.name}
+                            Book an appointment with {doctorInfo.name}
                         </CardDescription>
                     </div>
                 </CardHeader>
@@ -137,7 +146,7 @@ export default function BookAppointmentForm() {
                                     <SelectValue placeholder="Select a hospital" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    {doctor.hospitals.map((h, index) => (
+                                    {doctorInfo.hospitals.map((h, index) => (
                                         <SelectItem key={index} value={h}>{h}</SelectItem>
                                     ))}
                                 </SelectContent>
@@ -149,7 +158,7 @@ export default function BookAppointmentForm() {
                         </div>
                         <div className="flex items-center space-x-2 text-indigo-600">
                             <DollarSign className="h-5 w-5" />
-                            <span>Consultation Fee: {doctor.consultationFee}</span>
+                            <span>Consultation Fee: {doctorInfo.consultationFee}</span>
                         </div>
                         <CardFooter>
                             <Button type="submit" className="w-full bg-indigo-600 text-white hover:bg-indigo-700">

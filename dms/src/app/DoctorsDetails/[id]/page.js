@@ -100,7 +100,7 @@ export default function DoctorDetailsPage({ params }) {
                 </div>
             </CardContent>
             <CardFooter className="flex justify-center">
-                <Link href={"/BookAppionment"}>
+                <Link href={`/BookAppionments/${doctorInfo.id}`}>
                     <Button className="bg-indigo-600 text-white hover:bg-indigo-700">
                         Book Appointment
                     </Button></Link>
